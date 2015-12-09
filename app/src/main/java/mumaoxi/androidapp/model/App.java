@@ -32,8 +32,9 @@ public class App {
         PackageManager pm = context.getPackageManager();
         List<PackageInfo> mPacks = pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES);
         for (PackageInfo info : mPacks) {
-            if ((info.applicationInfo.flags & info.applicationInfo.FLAG_SYSTEM) <= 0 && (info.packageName.contains("xiaomi") ||
-                    info.packageName.contains("miui"))) {
+//            if ((info.applicationInfo.flags & info.applicationInfo.FLAG_SYSTEM) <= 0 && (info.packageName.contains("xiaomi") ||
+            if (info.packageName.contains("xiaomi") ||
+                    info.packageName.contains("miui")) {
                 App app = new App();
                 app.name = info.applicationInfo.loadLabel(pm).toString();
                 app.packageName = info.packageName;

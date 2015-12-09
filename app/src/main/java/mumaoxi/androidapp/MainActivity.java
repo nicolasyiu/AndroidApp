@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
 
                 }
-                Snackbar.make(view, "数据已写入SDCard：xiaomi.csv", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "数据已写入SDCard："+ Environment.getExternalStorageDirectory()+"/xiaomi.csv", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
